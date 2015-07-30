@@ -755,7 +755,7 @@ void sysexCompletionProc( MIDISysexSendRequest * sreq )
  sysexBuffer = 0;
 }
 
-void RtMidiOut :: sendMessage( std::vector<unsigned char> *message )
+void RtMidiOut::sendMessage( std::vector<unsigned char> *message )
 {
   // We use the MIDISendSysex() function to asynchronously send sysex
   // messages.  Otherwise, we use a single CoreMidi MIDIPacket.

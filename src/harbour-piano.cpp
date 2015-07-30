@@ -28,16 +28,13 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifdef QT_QML_DEBUG
 #include <QtQuick>
-#endif
 #include <QQuickView>
 #include <sailfishapp.h>
-#include "qmlpiano.hpp"
 #include <QGuiApplication>
-#include <QtDeclarative/QDeclarativeView>
-#include <QtDeclarative/QDeclarativeContext>
-#include <QtDeclarative/qdeclarative.h>
+#include <QQmlContext>
+//#include <QtDeclarative/qdeclarative.h>
+#include "qmlpiano.hpp"
 
 void Piano::noteOn(int keyIndex)
 {
@@ -111,8 +108,7 @@ void Piano::sendNoteMessage(unsigned char status, int keyIndex, unsigned char ve
 
 int main(int argc, char *argv[])
 {
-   QGuiApplication *app = SailfishApp::application(argc, argv);
-
+    QGuiApplication *app = SailfishApp::application(argc, argv);
     qmlRegisterType<Piano>("QMLPiano", 1, 0, "Piano");
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     view->setSource(SailfishApp::pathTo("qml/harbour-piano.qml"));
