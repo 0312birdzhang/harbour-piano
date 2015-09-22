@@ -15,8 +15,7 @@ TARGET = harbour-piano
 CONFIG += sailfishapp
 
 
-SOURCES += src/harbour-piano.cpp \
-    src/RtMidi.cpp
+SOURCES += src/harbour-piano.cpp 
 
 OTHER_FILES += qml/harbour-piano.qml \
     qml/cover/CoverPage.qml \
@@ -37,8 +36,5 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-piano-de.ts
 
-HEADERS += \
-    src/RtMidi.h \
-    src/RtError.h \
-    src/qmlpiano.hpp
+
 
